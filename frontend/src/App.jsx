@@ -60,8 +60,7 @@ export default function App() {
   }, [review])
 
   return (
-    <div className="h-screen bg-[#0f172a] text-slate-200 flex flex-col items-center font-[Rubik] overflow-hidden transition-all relative">
-      
+    <div className="min-h-screen md:h-screen bg-[#0f172a] text-slate-200 flex flex-col items-center font-[Rubik] md:overflow-hidden transition-all relative">      
       {/* Botón Info Flotante */}
       <button 
         onClick={() => setIsModalOpen(true)}
@@ -79,14 +78,14 @@ export default function App() {
         </p>
       </header>
 
-      <main className="flex flex-col md:flex-row gap-8 px-6 max-w-6xl w-full mx-auto flex-1 overflow-hidden">
-        
+      <main className="flex flex-col md:flex-row gap-6 md:gap-8 px-4 sm:px-6 max-w-6xl w-full mx-auto flex-1 md:overflow-hidden pb-8 md:pb-0">
+
         <div className="w-full md:w-2/5 flex flex-col items-center">
-          <div className="relative group w-full max-w-[280px] md:max-w-sm rounded-2xl overflow-hidden shadow-[0_0_40px_-10px_rgba(20,184,166,0.5)] border-2 border-teal/30 bg-slate-800 aspect-[2/3] flex items-center justify-center">
+          <div className="relative group w-40 sm:w-48 md:w-full md:max-w-sm rounded-2xl overflow-hidden shadow-[0_0_40px_-10px_rgba(20,184,166,0.5)] border-2 border-teal/30 bg-slate-800 aspect-[2/3] flex items-center justify-center">
             {loading ? (
               <div className="flex flex-col items-center gap-4">
-                <div className="w-12 h-12 border-4 border-teal border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-teal font-bold animate-pulse">Buscando...</p>
+                <div className="w-10 h-10 border-4 border-teal border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-teal font-bold text-sm animate-pulse">Buscando...</p>
               </div>
             ) : movie && (
               <img 
@@ -99,21 +98,21 @@ export default function App() {
           
           <button 
             onClick={fetchMovie} 
-            className="w-full max-w-[280px] md:max-w-sm rounded-xl mt-4 py-3 bg-teal text-white font-bold text-lg shadow-lg shadow-teal/20 hover:shadow-teal/40 hover:-translate-y-1 transition-all active:scale-95"
+            className="w-40 sm:w-48 md:w-full md:max-w-sm rounded-xl mt-4 py-2 md:py-3 bg-teal text-white font-bold text-sm md:text-lg shadow-lg shadow-teal/20 hover:shadow-teal/40 hover:-translate-y-1 transition-all active:scale-95"
           >
             Cambiar Película
           </button> 
         </div>
 
-        <div className="w-full md:w-3/5 overflow-y-auto pr-2 pb-4">
-          <div className="bg-slate-800/40 p-6 rounded-3xl border border-slate-700 backdrop-blur-sm shadow-2xl">
+        <div className="w-full md:w-3/5 md:overflow-y-auto pr-0 md:pr-2 pb-4">
+          <div className="bg-slate-800/40 p-5 md:p-6 rounded-3xl border border-slate-700 backdrop-blur-sm shadow-2xl">
             <h2 className="text-xl font-bold mb-4 text-white flex items-center gap-2">
               <span className="w-2 h-6 bg-teal rounded-full inline-block"></span>
               Tu Reseña
             </h2>
             
             <textarea
-              className="w-full h-40 p-5 rounded-2xl bg-slate-900/80 text-slate-100 border border-slate-700 focus:border-teal focus:ring-2 focus:ring-teal/20 focus:outline-none transition-all resize-none placeholder:text-slate-600 text-lg shadow-inner"
+              className="w-full h-28 md:h-40 p-4 rounded-2xl bg-slate-900/80 text-slate-100 border border-slate-700 focus:border-teal focus:ring-2 focus:ring-teal/20 focus:outline-none transition-all resize-none placeholder:text-slate-600 text-base shadow-inner"
               placeholder="Escribe tu reseña..."
               value={review}
               onChange={(e) => setReview(e.target.value)}
@@ -146,8 +145,7 @@ export default function App() {
         </div>
       </main>
 
-      {/* Footer Ajustado */}
-      <footer className="py-4 w-full flex flex-col items-center gap-2 bg-[#0f172a]">
+      <footer className="py-4 w-full flex flex-col items-center gap-2 bg-[#0f172a] mt-auto">
         <p className="text-xs text-slate-500 font-medium">Desarrollado por Rodrigo López Monroy</p>
         <div className="flex gap-4">
           <a href="https://github.com/rodrigolopezu" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-white transition-colors">
@@ -159,7 +157,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Modal Acerca de */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-sm">
           <div className="bg-slate-900 border border-slate-700 w-full max-w-xl rounded-3xl p-8 shadow-2xl relative">
