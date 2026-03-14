@@ -16,7 +16,7 @@ export default function App() {
       return
     }
     try {
-      const response = await axios.post("http://localhost:8000/analyze", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/analyze`, {
         texto: text
       })
       setResult(response.data)
