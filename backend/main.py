@@ -6,7 +6,7 @@ from analyzer import analyze_review
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173","https://movie-review-analyzer-rlm.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
