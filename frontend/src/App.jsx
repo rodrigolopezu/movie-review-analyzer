@@ -168,23 +168,31 @@ export default function App() {
             </button>
             <h2 className="text-2xl font-black text-white mb-6 border-b border-slate-800 pb-2">Información del Proyecto</h2>
             <div className="space-y-6">
-              <section>
-                <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">Backend (Python)</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  FastAPI, Uvicorn, HuggingFace Transformers (bert-base-multilingual-uncased-sentiment), Pydantic y python-dotenv.
-                </p>
-              </section>
-              <section>
-                <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">Frontend (React)</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Vite, React Hooks, Tailwind CSS, Axios, React Icons y Debouncing para optimización de API.
-                </p>
-              </section>
-              <section>
-                <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">Arquitectura</h3>
-                <p className="text-xs text-slate-400">Cliente-servidor con gestión de CORS, Variables de entorno y consumo de API externa TMDB.</p>
-              </section>
-            </div>
+                <section>
+                  <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">Backend (Python)</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    FastAPI, Uvicorn, HuggingFace Inference API (nlptown/bert-base-multilingual-uncased-sentiment), Pydantic, HTTPX y python-dotenv.
+                  </p>
+                </section>
+                <section>
+                  <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">Frontend (React)</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    Vite, React Hooks (useState, useEffect), Tailwind CSS, Axios, React Icons y Debouncing para optimización de llamadas a la API.
+                  </p>
+                </section>
+                <section>
+                  <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">APIs Externas</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    TMDB para películas y pósters random. HuggingFace Inference API para análisis de sentimiento multilingüe.
+                  </p>
+                </section>
+                <section>
+                  <h3 className="text-teal font-bold text-sm mb-2 uppercase tracking-wider">Arquitectura</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    Cliente-servidor con CORS, variables de entorno seguras, entorno virtual Python y deploy en Render (backend) + Vercel (frontend).
+                  </p>
+                </section>
+              </div>
           </div>
         </div>
       )}
