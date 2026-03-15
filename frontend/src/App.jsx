@@ -55,7 +55,7 @@ export default function App() {
 
   useEffect(() => { fetchMovie() }, [])
   useEffect(() => {
-    const timer = setTimeout(() => analyzeReview(review), 500)
+    const timer = setTimeout(() => analyzeReview(review), 50)
     return () => clearTimeout(timer)
   }, [review])
 
